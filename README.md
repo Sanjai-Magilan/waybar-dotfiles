@@ -6,7 +6,7 @@ Modern, stylish waybar setup with dark theme, glassmorphism effects, and automat
 
 ```bash
 git clone <repo-url> ~/dotfiles-waybar
-cd ~/dotfiles-waybar
+cd ~/waybar-dotfiles
 bash install.sh
 ```
 

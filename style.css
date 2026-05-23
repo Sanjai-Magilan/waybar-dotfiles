@@ -115,12 +115,40 @@ window#waybar {
     box-shadow: 0 4px 12px rgba(137, 220, 235, 0.3);
 }
 
+#custom-net-speed {
+    color: @sky;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(137, 220, 235, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+#custom-net-speed:hover {
+    box-shadow: 0 4px 12px rgba(137, 220, 235, 0.3);
+}
+
 #memory {
     color: @green;
     padding: 6px 14px;
     background: linear-gradient(135deg, rgba(166, 227, 161, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
     border-radius: 10px;
     border: none;
+}
+
+#custom-gpu {
+    color: @red;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(243, 139, 168, 0.1) 0%, rgba(250, 179, 135, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+#custom-gpu:hover {
+    box-shadow: 0 4px 12px rgba(243, 139, 168, 0.3);
 }
 
 #battery {

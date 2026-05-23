@@ -1,0 +1,85 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+  "spacing": 8,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "network",
+    "memory",
+    "battery",
+    "tray"
+  ],
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "wofi --show drun",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "active-only": false,
+    "on-click": "activate",
+    "format": "{name}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%H:%M | %d/%m/%Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "memory": {
+    "format": "󰍛  {percentage}%",
+    "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB"
+  },
+  "backlight": {
+    "device": "nvidia_0",
+    "format": "☀  {percent}%",
+    "format-icons": []
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  {volume}%",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "format-wifi": "󰤨  {essid}",
+    "format-ethernet": "󰡅  {ipaddr}",
+    "format-disconnected": "󰤭  Disconnected",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "max-length": 50,
+    "on-click": "~/.config/waybar/network-menu.sh"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-plugged": "󰂅  {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-icons": ["󰂎", "󰂏", "󰂐", "󰂑", "󰂒"]
+  }
+}
+}

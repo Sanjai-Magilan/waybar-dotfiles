@@ -1,0 +1,176 @@
+/* Waybar Modern Style - Neon Gradient */
+
+@define-color base   #1e1e2e;
+@define-color crust  #11111b;
+@define-color text   #cdd6f4;
+@define-color mauve  #cba6f7;
+@define-color red    #f38ba8;
+@define-color peach  #fab387;
+@define-color yellow #f9e2af;
+@define-color green  #a6e3a1;
+@define-color blue   #89b4fa;
+@define-color lavender #b4befe;
+@define-color sky    #89dceb;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(17, 17, 27, 0.95);
+    color: @text;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+}
+
+#workspaces {
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.1) 0%, rgba(137, 180, 250, 0.05) 100%);
+    margin: 0;
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: none;
+}
+
+#workspaces button {
+    padding: 6px 12px;
+    color: rgba(205, 214, 244, 0.6);
+    background-color: transparent;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    margin: 0 2px;
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: linear-gradient(135deg, @mauve 0%, @blue 100%);
+    box-shadow: 0 4px 15px rgba(203, 166, 247, 0.4);
+}
+
+#workspaces button:hover {
+    background-color: rgba(203, 166, 247, 0.15);
+}
+
+#custom-launcher {
+    color: @mauve;
+    font-size: 18px;
+    padding: 6px 14px;
+    margin: 0 8px 0 0;
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.15) 0%, rgba(137, 180, 250, 0.1) 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(203, 166, 247, 0.3);
+    transition: all 0.3s ease;
+}
+
+#custom-launcher:hover {
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.25) 0%, rgba(137, 180, 250, 0.2) 100%);
+    box-shadow: 0 4px 12px rgba(203, 166, 247, 0.3);
+}
+
+#clock {
+    color: @lavender;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(180, 190, 254, 0.1) 0%, rgba(137, 220, 235, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+}
+
+#pulseaudio {
+    color: @blue;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.1) 0%, rgba(137, 220, 235, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#pulseaudio:hover {
+    box-shadow: 0 4px 12px rgba(137, 180, 250, 0.3);
+}
+
+#backlight {
+    color: @yellow;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(249, 226, 175, 0.1) 0%, rgba(250, 179, 135, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+}
+
+#network {
+    color: @sky;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(137, 220, 235, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#network:hover {
+    box-shadow: 0 4px 12px rgba(137, 220, 235, 0.3);
+}
+
+#memory {
+    color: @green;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+}
+
+#battery {
+    color: @peach;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(250, 179, 135, 0.1) 0%, rgba(243, 139, 168, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+}
+
+#battery.charging, #battery.plugged {
+    color: @green;
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
+    border: none;
+}
+
+#battery.critical:not(.charging) {
+    background: linear-gradient(135deg, rgba(243, 139, 168, 0.3) 0%, rgba(243, 139, 168, 0.15) 100%);
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border: none;
+}
+
+@keyframes blink {
+    to {
+        background: linear-gradient(135deg, rgba(243, 139, 168, 0.15) 0%, rgba(243, 139, 168, 0.05) 100%);
+        color: @red;
+    }
+}
+
+#tray {
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.05) 0%, rgba(137, 180, 250, 0.05) 100%);
+    border-radius: 10px;
+    border: none;
+    margin-left: 8px;
+}
+
+tooltip {
+    background: rgba(17, 17, 27, 0.95);
+    border: 1px solid rgba(203, 166, 247, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+tooltip label {
+    color: @text;
+    padding: 4px 8px;
+}

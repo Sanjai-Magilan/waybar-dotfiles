@@ -1,0 +1,107 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "spacing": 10,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "network",
+    "memory",
+    "battery",
+    "tray"
+  ],
+  "custom/launcher": {
+    "format": "\uf0c9",
+    "on-click": "wofi --show drun",
+    "tooltip": false,
+    "align": 0.5
+  },
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "active-only": false,
+    "on-click": "activate",
+    "format": "{name}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
+    "align": 0.5
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%H:%M\n%d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "align": 0.5
+  },
+  "memory": {
+    "format": "\uf538\n{}%",
+    "align": 0.5
+  },
+  "backlight": {
+    "device": "nvidia_0",
+    "format": "{icon}\n{percent}%",
+    "format-icons": [
+      "\ue38d",
+      "\ue3d3",
+      "\ue3d1",
+      "\ue3cf",
+      "\ue3ce",
+      "\ue3cd",
+      "\ue3ca",
+      "\ue3c8",
+      "\ue39b"
+    ],
+    "align": 0.5
+  },
+  "pulseaudio": {
+    "format": "{icon}\n{volume}%",
+    "format-muted": "\uf6a9\n{volume}%",
+    "format-icons": {
+      "default": [
+        "\uf026",
+        "\uf027",
+        "\uf028"
+      ]
+    },
+    "on-click": "pavucontrol",
+    "align": 0.5
+  },
+  "network": {
+    "format-wifi": "{icon}\n{essid}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "\u26a0",
+    "tooltip-format": "{essid} ({signalStrength}%) \uf1eb",
+    "max-length": 50,
+    "align": 0.5
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}\n{capacity}%",
+    "format-charging": "{icon}\n{capacity}%",
+    "format-plugged": "{icon}\n{capacity}%",
+    "format-alt": "{icon}\n{time}",
+    "format-icons": [
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
+    ],
+    "align": 0.5
+  }
+}

@@ -9,18 +9,18 @@
   "reload_style_on_change": true,
   "modules-left": [
     "custom/launcher",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "memory",
+    "custom/gpu",
+    "custom/net-speed"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "custom/net-speed",
     "network",
     "pulseaudio",
     "backlight",
-    "memory",
-    "custom/gpu",
     "battery",
     "tray"
   ],
@@ -95,5 +95,4 @@
     "format-alt": "{icon}  {time}",
     "format-icons": ["󰂎", "󰂏", "󰂐", "󰂑", "󰂒"]
   }
-}
 }

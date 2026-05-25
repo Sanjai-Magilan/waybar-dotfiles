@@ -1,36 +1,32 @@
-/* Waybar Modern Style - Neon Gradient */
+/* Waybar RDR Style - Sunset Desert */
 
-@define-color base   #1e1e2e;
-@define-color crust  #11111b;
-@define-color text   #cdd6f4;
-@define-color mauve  #cba6f7;
-@define-color red    #f38ba8;
-@define-color peach  #fab387;
-@define-color yellow #f9e2af;
-@define-color green  #a6e3a1;
-@define-color blue   #89b4fa;
-@define-color lavender #b4befe;
-@define-color sky    #89dceb;
+@define-color base   rgba(255, 140, 51, 0.2);
+@define-color crust  #120f1a;
+@define-color text   #000000;
+@define-color orange #ff8c33;
+@define-color yellow #ffe066;
+@define-color shadow rgba(0, 0, 0, 0.6);
 
 * {
     font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(17, 17, 27, 0.95);
+    background-color: transparent;
     color: @text;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     padding: 6px 10px;
     border: none;
+    box-shadow: none;
     outline: none;
+    outline-width: 0;
 }
 
 #workspaces {
-    background: linear-gradient(135deg, rgba(203, 166, 247, 0.1) 0%, rgba(137, 180, 250, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(255, 140, 51, 0.2) 0%, rgba(194, 163, 176, 0.1) 100%);
     margin: 0;
     padding: 4px 8px;
     border-radius: 12px;
@@ -39,166 +35,78 @@ window#waybar {
 
 #workspaces button {
     padding: 6px 12px;
-    color: rgba(205, 214, 244, 0.6);
+    color: rgba(255, 255, 255, 0.7); /* Clean white text */
     background-color: transparent;
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-weight: 600;
+    font-weight: 700;
     margin: 0 2px;
 }
 
 #workspaces button.active {
-    color: #1e1e2e;
-    background: linear-gradient(135deg, @mauve 0%, @blue 100%);
-    box-shadow: 0 4px 15px rgba(203, 166, 247, 0.4);
+    color: #1a1625;
+    background: linear-gradient(135deg, @orange 0%, @yellow 100%);
+    box-shadow: 0 4px 15px rgba(255, 140, 51, 0.4);
 }
 
 #workspaces button:hover {
-    background-color: rgba(203, 166, 247, 0.15);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
 #custom-launcher {
-    color: @mauve;
+    color: @orange;
     font-size: 18px;
     padding: 6px 14px;
     margin: 0 8px 0 0;
-    background: linear-gradient(135deg, rgba(203, 166, 247, 0.15) 0%, rgba(137, 180, 250, 0.1) 100%);
-    border-radius: 10px;
-    border: 1px solid rgba(203, 166, 247, 0.3);
-    transition: all 0.3s ease;
-}
-
-#custom-launcher:hover {
-    background: linear-gradient(135deg, rgba(203, 166, 247, 0.25) 0%, rgba(137, 180, 250, 0.2) 100%);
-    box-shadow: 0 4px 12px rgba(203, 166, 247, 0.3);
-}
-
-#clock {
-    color: @lavender;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(180, 190, 254, 0.1) 0%, rgba(137, 220, 235, 0.05) 100%);
-    border-radius: 10px;
-    border: none;
-}
-
-#pulseaudio {
-    color: @blue;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(137, 180, 250, 0.1) 0%, rgba(137, 220, 235, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(255, 140, 51, 0.15) 0%, rgba(194, 163, 176, 0.1) 100%);
     border-radius: 10px;
     border: none;
     transition: all 0.3s ease;
 }
 
-#pulseaudio:hover {
-    box-shadow: 0 4px 12px rgba(137, 180, 250, 0.3);
-}
-
-#backlight {
-    color: @yellow;
+/* Unified Subtle Style for System Modules (White Text) */
+#clock, #pulseaudio, #network, #custom-net-speed, #memory, #custom-gpu, #battery, #tray, #backlight {
+    color: #000000;
     padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(249, 226, 175, 0.1) 0%, rgba(250, 179, 135, 0.05) 100%);
+   /*background: rgba(255, 190, 142, 0.2);*/
+    background: linear-gradient(135deg, rgba(255, 140, 51, 0.2) 0%, rgba(194, 163, 176, 0.1) 100%);
     border-radius: 10px;
     border: none;
+    margin: 0 4px;
 }
 
-#network {
-    color: @sky;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(137, 220, 235, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
-    border-radius: 10px;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-#network:hover {
-    box-shadow: 0 4px 12px rgba(137, 220, 235, 0.3);
-}
-
-#custom-net-speed {
-    color: @sky;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(137, 220, 235, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
-    border-radius: 10px;
-    border: none;
-    transition: all 0.3s ease;
-    font-size: 12px;
-}
-
-#custom-net-speed:hover {
-    box-shadow: 0 4px 12px rgba(137, 220, 235, 0.3);
-}
-
-#memory {
-    color: @green;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
-    border-radius: 10px;
-    border: none;
-}
-
-#custom-gpu {
-    color: @red;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(243, 139, 168, 0.1) 0%, rgba(250, 179, 135, 0.05) 100%);
-    border-radius: 10px;
-    border: none;
-    font-size: 12px;
-    transition: all 0.3s ease;
-}
-
-#custom-gpu:hover {
-    box-shadow: 0 4px 12px rgba(243, 139, 168, 0.3);
-}
-
-#battery {
-    color: @peach;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(250, 179, 135, 0.1) 0%, rgba(243, 139, 168, 0.05) 100%);
-    border-radius: 10px;
-    border: none;
+#pulseaudio:hover, #network:hover, #custom-net-speed:hover, #custom-gpu:hover, #backlight:hover, #clock:hover, #memory:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #battery.charging, #battery.plugged {
-    color: @green;
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.1) 0%, rgba(166, 227, 161, 0.05) 100%);
-    border: none;
+    color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
 }
 
 #battery.critical:not(.charging) {
-    background: linear-gradient(135deg, rgba(243, 139, 168, 0.3) 0%, rgba(243, 139, 168, 0.15) 100%);
-    color: @red;
+    background: rgba(211, 47, 47, 0.3);
+    color: #ff4d4d;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    border: none;
 }
 
 @keyframes blink {
-    to {
-        background: linear-gradient(135deg, rgba(243, 139, 168, 0.15) 0%, rgba(243, 139, 168, 0.05) 100%);
-        color: @red;
-    }
-}
-
-#tray {
-    padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(203, 166, 247, 0.05) 0%, rgba(137, 180, 250, 0.05) 100%);
-    border-radius: 10px;
-    border: none;
-    margin-left: 8px;
+    to { opacity: 0.7; }
 }
 
 tooltip {
-    background: rgba(17, 17, 27, 0.95);
-    border: 1px solid rgba(203, 166, 247, 0.3);
+    background: rgba(26, 22, 37, 0.95);
+    border: 1px solid @orange;
     border-radius: 10px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px @shadow;
 }
 
 tooltip label {
-    color: @text;
+    color: #ffffff;
     padding: 4px 8px;
 }

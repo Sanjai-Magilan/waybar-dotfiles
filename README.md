@@ -1,5 +1,7 @@
 # Waybar Configuration - Dotfiles
 
+![Waybar Screenshot](assets/screenshot.png)
+
 Modern, stylish waybar setup with dark theme, glassmorphism effects, and automated dependency installation.
 
 ## Quick Start
@@ -174,4 +176,3 @@ cd ~/.config/waybar
 git add .
 git commit -m "Custom waybar setup"
 ```
-

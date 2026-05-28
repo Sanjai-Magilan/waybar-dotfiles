@@ -166,7 +166,7 @@ MIT
 
 ## Author
 
-magilan
+sanjai magilan
 
 ## Git
 
